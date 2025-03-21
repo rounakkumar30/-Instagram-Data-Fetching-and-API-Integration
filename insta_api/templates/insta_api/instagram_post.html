@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .post-container {
+            width: 50%;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .caption {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .url {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .url a {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        {% if error %}
+            <h2>Error</h2>
+            <p>{{ error }}</p>
+        {% else %}
+            <h2>Latest Instagram Post</h2>
+            <p class="caption"><strong>Caption:</strong> {{ caption }}</p>
+            <img src="{{ image_url }}" alt="Instagram Post Image">
+            <p class="url"><strong>Image URL:</strong> <a href="{{ image_url }}" target="_blank">Post Link</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>
